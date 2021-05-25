@@ -1,0 +1,1286 @@
+@charset "utf-8";
+*{
+	margin:0;
+	padding:0;
+}
+.perspective{
+	perspective: 2000px;
+}
+.none{
+	display: none;
+}
+li{
+	list-style: none;
+}
+body{
+	background: url(../img/preview.png) ;
+	max-width: 100%;
+	min-width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size:100% 100%;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+}
+
+/* 音乐logo */
+.musicLogo{
+	display: block;
+	width:30px;
+	height:30px;
+	background:url(../img/music.svg) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	right:30px;
+	top:30px;
+	animation: audioMove 2s linear 0s infinite;
+}
+@keyframes audioMove {
+  0%{
+      transform: rotate(0deg);
+  }
+  100%{
+      transform: rotate(360deg);
+  }
+}
+
+/* 左上角跳动的心 */
+.small_chest {
+	width:100px;
+	height:100px;
+	position:absolute;
+	left: 30px;
+	top:30px;
+}
+.small_chest_left{
+	position:absolute;
+	z-index:3;
+	background:linear-gradient(-90deg,#F50A45 0%,#d5093c 40%);
+	animation:beat 1s ease 0s infinite normal;
+	left:12px;
+	top:20px;
+	width:44px;
+	height:44px;
+	border-radius:22px;
+}
+.small_chest_center{
+	position:absolute;
+	z-index:2;
+	background:linear-gradient(-45deg,#B80734 0%,#d5093c 40%);
+	animation:beat 1s ease 0s infinite normal;
+	width:44px;
+	height:44px;
+	bottom:20px;
+	left:28px;
+	transform:rotateZ(225deg);
+}
+.small_chest_right{
+	position:absolute;
+	z-index:2;
+	background:linear-gradient(-90deg,#F50A45 0%,#d5093c 40%);
+	animation:beat 1s ease 0s infinite normal;
+	right:12px;
+	top:20px;
+	width:44px;
+	height:44px;
+	border-radius:22px;
+}
+@keyframes beat {
+	0% {
+		transform:scale(1) rotate(225deg);
+		box-shadow:0 0 40px #d5093c;
+	}
+	50% {
+		transform:scale(1.2) rotate(225deg);
+		box-shadow:0 0 70px #d5093c;
+	}
+	100% {
+		transform:scale(1) rotate(225deg);
+		box-shadow:0 0 40px #d5093c;
+	}
+}
+
+/* 图片心墙 */
+.chest {
+	width:800px;
+	height:800px;
+	position:relative;
+	margin: 25px auto;
+}
+/* 图片左心墙 */
+.heart_left{
+	position:absolute;
+	z-index:3;
+	animation:beatLeft 0.7s ease 0s infinite normal;
+	left:10px;
+	top:50px;
+	width:450px;
+	height:450px;
+	border-radius:0 225px 225px 0;
+	transform:rotateZ(225deg);
+	overflow: hidden;
+}
+.heart_left ul:after{
+	clear: both;
+	content: "";
+	display: block;
+}
+.heart_left li{
+	float: left;
+	width:225px;
+	height:225px;
+}
+.heart_left li:nth-child(1){
+	background: url(../img/01.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	transform:rotateZ(180deg);
+}
+.heart_left li:nth-child(2){
+	background: url(../img/small_annular.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	transform:rotateZ(180deg);
+}
+.heart_left li:nth-child(3){
+	background: url(../img/03.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	transform:rotateZ(180deg);
+}
+.heart_left li:nth-child(4){
+	background: url(../img/05.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	transform:rotateZ(180deg);
+}
+/* 图片中心墙 */
+.heart_center{
+	position:absolute;
+	z-index:2;
+	animation:beatCenter 0.7s ease 0s infinite normal;
+	width:450px;
+	height:450px;
+	bottom:136px;
+	left:175px;
+	transform:rotateZ(225deg);
+}
+.heart_center ul:after{
+	clear: both;
+	content: "";
+	display: block;
+}
+.heart_center li{
+	float: left;
+	width:225px;
+	height:225px;
+}
+.heart_center li:nth-child(1){
+	background: url(../img/06.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	transform:rotateZ(180deg);
+}
+.heart_center li:nth-child(2){
+	background: url(../img/4.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.heart_center li:nth-child(3){
+	background: url(../img/04.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.heart_center li:nth-child(4){
+	background: url(../img/6.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+/* 图片右心墙 */
+.heart_right{
+	position:absolute;
+	z-index:2;
+	animation:beatRight 0.7s ease 0s infinite normal;
+	right:10px;
+	top:50px;
+	width: 450px;
+	height:450px;
+	border-radius:0 0 225px 225px;
+	transform:rotateZ(225deg);
+	overflow: hidden;
+}
+.heart_right ul:after{
+	clear: both;
+	content: "";
+	display: block;
+}
+.heart_right li{
+	float: left;
+	width:225px;
+	height:225px;
+}
+.heart_right li:nth-child(1){
+	background: url(../img/1.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	transform:rotateZ(180deg);
+}
+.heart_right li:nth-child(2){
+	background: url(../img/2.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.heart_right li:nth-child(3){
+	background: url(../img/3.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	transform:rotateZ(180deg);
+}
+.heart_right li:nth-child(4){
+	background: url(../img/5.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	transform:rotateZ(180deg);
+}
+@keyframes beatLeft {
+	0% {
+		transform:scale(1) rotate(225deg);
+		box-shadow:6px -6px 10px #d5093c;
+	}
+	50% {
+		transform:scale(1) rotate(225deg);
+		box-shadow:6px -6px 15px #d5093c;
+	}
+	100% {
+		transform:scale(1) rotate(225deg);
+		box-shadow:6px -6px 10px #d5093c;
+	}
+}
+@keyframes beatCenter {
+	0% {
+		transform:scale(1) rotate(225deg);
+		box-shadow:-6px -6px 10px #d5093c;
+	}
+	50% {
+		transform:scale(1) rotate(225deg);
+		box-shadow:-6px -6px 15px #d5093c;
+	}
+	100% {
+		transform:scale(1) rotate(225deg);
+		box-shadow:-6px -6px 10px #d5093c;
+	}
+}
+@keyframes beatRight {
+	0% {
+		transform:scale(1) rotate(225deg);
+		box-shadow:-6px 6px 10px #d5093c;
+	}
+	50% {
+		transform:scale(1) rotate(225deg);
+		box-shadow:-6px 6px 15px #d5093c;
+	}
+	100% {
+		transform:scale(1) rotate(225deg);
+		box-shadow:-6px 6px 10px #d5093c;
+	}
+}
+
+/* 立体相册盒子 */
+.albumBox{
+	width:200px;
+	height:200px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size:100% 100%;
+  position: absolute;
+  margin-left: 42%;
+  margin-top:22%;
+	-webkit-transform-style:preserve-3d;
+}
+/* 小盒子 */
+.minbox{
+	width:140px;
+	height:140px;
+	position: absolute;
+	left:0px;
+	top:0px;
+	-webkit-transform-style:preserve-3d;
+}
+.minbox li{
+	width:140px;
+	height:140px;
+	position: absolute;
+	left:0;
+	top:0;
+	-webkit-transition:all 1s ease;
+}
+.minbox li:nth-child(1){
+	background: url(../img/01.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.minbox li:nth-child(2){
+	background: url(../img/02.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.minbox li:nth-child(3){
+	background: url(../img/03.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.minbox li:nth-child(4){
+	background: url(../img/04.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.minbox li:nth-child(5){
+	background: url(../img/05.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.minbox li:nth-child(6){
+	background: url(../img/06.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+/* 大盒子 */
+.maxbox{
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	left: -30px;
+	top: -30px;
+	-webkit-transform-style: preserve-3d;	
+}
+.maxbox li{
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0.2;
+	-webkit-transition:all 1s ease;
+}
+.maxbox li:nth-child(1){
+	background: url(../img/1.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.maxbox li:nth-child(2){
+	background: url(../img/2.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.maxbox li:nth-child(3){
+	background: url(../img/3.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.maxbox li:nth-child(4){
+	background: url(../img/4.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.maxbox li:nth-child(5){
+	background: url(../img/5.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.maxbox li:nth-child(6){
+	background: url(../img/6.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+/* 玫瑰花 */
+.rose{
+	width:250px;
+	height:290px;
+	position: absolute;
+	left:-45px;
+	top:140px;
+}
+.text{
+	height: 40px;
+	line-height: 40px;
+	font-size: 40px;
+	text-align: center;
+	color: blueviolet;
+	font-weight: bolder;
+}
+
+/* 第一步，立体内外盒子顺时针转动 */
+.firstStep .minbox,.firstStep .maxbox{
+	-webkit-animation:moveClockwise 5s linear infinite;
+}
+.firstStep .minbox li:nth-child(1){
+	-webkit-transform:translateZ(70px);
+}
+.firstStep .minbox li:nth-child(2){
+	-webkit-transform:rotateX(180deg) translateZ(70px);
+}
+.firstStep .minbox li:nth-child(3){
+	-webkit-transform:rotateX(-90deg) translateZ(70px);
+}
+.firstStep .minbox li:nth-child(4){
+	-webkit-transform:rotateX(90deg) translateZ(70px);
+}
+.firstStep .minbox li:nth-child(5){
+	-webkit-transform:rotateY(-90deg) translateZ(70px);
+}
+.firstStep .minbox li:nth-child(6){
+	-webkit-transform:rotateY(90deg) translateZ(70px);
+}
+.firstStep .maxbox li:nth-child(1){
+	-webkit-transform:translateZ(100px);
+}
+.firstStep .maxbox li:nth-child(2){
+	-webkit-transform:rotateX(180deg) translateZ(100px);
+}
+.firstStep .maxbox li:nth-child(3){
+	-webkit-transform:rotateX(-90deg) translateZ(100px);
+}
+.firstStep .maxbox li:nth-child(4){
+	-webkit-transform:rotateX(90deg) translateZ(100px);
+}
+.firstStep .maxbox li:nth-child(5){
+	-webkit-transform:rotateY(-90deg) translateZ(100px);
+}
+.firstStep .maxbox li:nth-child(6){
+	-webkit-transform:rotateY(90deg) translateZ(100px);
+}
+@keyframes moveClockwise{
+	0%{
+		-webkit-transform: rotateX(13deg) rotateY(0deg);
+	}
+	100%{
+		-webkit-transform:rotateX(13deg) rotateY(360deg);
+	}
+}
+
+/* 第二步，外盒子扩大 */
+.secondStep .minbox,.secondStep .maxbox{
+	-webkit-animation:moveClockwise 5s linear infinite;
+}
+.secondStep .minbox li:nth-child(1){
+	-webkit-transform:translateZ(70px);
+}
+.secondStep .minbox li:nth-child(2){
+	-webkit-transform:rotateX(180deg) translateZ(70px);
+}
+.secondStep .minbox li:nth-child(3){
+	-webkit-transform:rotateX(-90deg) translateZ(70px);
+}
+.secondStep .minbox li:nth-child(4){
+	-webkit-transform:rotateX(90deg) translateZ(70px);
+}
+.secondStep .minbox li:nth-child(5){
+	-webkit-transform:rotateY(-90deg) translateZ(70px);
+}
+.secondStep .minbox li:nth-child(6){
+	-webkit-transform:rotateY(90deg) translateZ(70px);
+}
+.secondStep .maxbox li:nth-child(1){
+	width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+	-webkit-transform:translateZ(300px);
+}
+.secondStep .maxbox li:nth-child(2){
+  width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+	-webkit-transform:rotateX(180deg) translateZ(300px);
+}
+.secondStep .maxbox li:nth-child(3){
+  width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+	-webkit-transform:rotateX(-90deg) translateZ(300px);
+}
+.secondStep .maxbox li:nth-child(4){
+  width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+	-webkit-transform:rotateX(90deg) translateZ(300px);
+}
+.secondStep .maxbox li:nth-child(5){
+  width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+	-webkit-transform:rotateY(-90deg) translateZ(300px);
+}
+.secondStep .maxbox li:nth-child(6){
+  width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+	-webkit-transform:rotateY(90deg) translateZ(300px);
+}
+
+/* 第三步，外盒子转环形 */
+.thridStep .minbox{
+  -webkit-transform:rotateX(-13deg);
+	-webkit-animation:annularMove 5s linear infinite;
+}
+.thridStep .maxbox{
+  -webkit-transform:rotateX(-13deg);
+	-webkit-animation:annularMove 10s linear infinite;
+}
+.thridStep .minbox li:nth-child(1){
+	-webkit-transform:translateZ(70px);
+}
+.thridStep .minbox li:nth-child(2){
+	-webkit-transform:rotateX(180deg) translateZ(70px);
+}
+.thridStep .minbox li:nth-child(3){
+	-webkit-transform:rotateX(-90deg) translateZ(70px);
+}
+.thridStep .minbox li:nth-child(4){
+	-webkit-transform:rotateX(90deg) translateZ(70px);
+}
+.thridStep .minbox li:nth-child(5){
+	-webkit-transform:rotateY(-90deg) translateZ(70px);
+}
+.thridStep .minbox li:nth-child(6){
+	-webkit-transform:rotateY(90deg) translateZ(70px);
+}
+.thridStep .maxbox li:nth-child(1){
+  width: 200px;
+	height: 200px;
+  opacity: 0.8;
+	-webkit-transform:rotateY(0deg) translateZ(300px);
+}
+.thridStep .maxbox li:nth-child(2){
+  width: 200px;
+	height: 200px;
+  opacity: 0.8;
+  background: url(../img/large_annular.png);
+  background-repeat: no-repeat;
+	background-size: contain;
+	-webkit-transform:rotateY(60deg) translateZ(300px);
+}
+.thridStep .maxbox li:nth-child(3){
+  width: 200px;
+	height: 200px;
+  opacity: 0.8;
+	-webkit-transform:rotateY(120deg) translateZ(300px);
+}
+.thridStep .maxbox li:nth-child(4){
+  width: 200px;
+	height: 200px;
+  opacity: 0.8;
+	-webkit-transform:rotateY(180deg) translateZ(300px);
+}
+.thridStep .maxbox li:nth-child(5){
+  width: 200px;
+	height: 200px;
+  opacity: 0.8;
+	-webkit-transform:rotateY(240deg) translateZ(300px);
+}
+.thridStep .maxbox li:nth-child(6){
+  width: 200px;
+	height: 200px;
+  opacity: 0.8;
+	-webkit-transform:rotateY(300deg) translateZ(300px);
+}
+@keyframes annularMove{
+	0%{
+		-webkit-transform: rotateX(-13deg) rotateY(0deg);
+	}
+	100%{
+		-webkit-transform:rotateX(-13deg) rotateY(360deg);
+	}
+}
+
+/* 第四步，内盒子转环形并外盒子扩展 */
+.fourthStep .minbox{
+  -webkit-transform:rotateX(-13deg);
+	-webkit-animation:annularMove 10s linear infinite;
+}
+.fourthStep .maxbox{
+  -webkit-transform:rotateX(-13deg);
+	-webkit-animation:annularMove 15s linear infinite;
+}
+.fourthStep .minbox li:nth-child(1){
+  width: 150px;
+	height: 150px;
+  -webkit-transform:rotateY(30deg) translateZ(200px);
+}
+.fourthStep .minbox li:nth-child(2){
+	width: 150px;
+  height: 150px;
+  background: url(../img/small_annular.png);
+  background-repeat: no-repeat;
+	background-size: contain;
+  -webkit-transform:rotateY(90deg) translateZ(200px);
+}
+.fourthStep .minbox li:nth-child(3){
+	width: 150px;
+	height: 150px;
+  -webkit-transform:rotateY(150deg) translateZ(200px);
+}
+.fourthStep .minbox li:nth-child(4){
+	width: 150px;
+	height: 150px;
+  -webkit-transform:rotateY(210deg) translateZ(200px);
+}
+.fourthStep .minbox li:nth-child(5){
+	width: 150px;
+	height: 150px;
+  -webkit-transform:rotateY(270deg) translateZ(200px);
+}
+.fourthStep .minbox li:nth-child(6){
+	width: 150px;
+	height: 150px;
+  -webkit-transform:rotateY(330deg) translateZ(200px);
+}
+.fourthStep .maxbox li:nth-child(1){
+  width: 200px;
+	height: 200px;
+  opacity: 0.9;
+	-webkit-transform:rotateY(0deg) translateZ(500px);
+}
+.fourthStep .maxbox li:nth-child(2){
+  width: 200px;
+	height: 200px;
+  opacity: 0.9;
+  background: url(../img/large_annular.png);
+  background-repeat: no-repeat;
+	background-size: contain;
+	-webkit-transform:rotateY(60deg) translateZ(500px);
+}
+.fourthStep .maxbox li:nth-child(3){
+  width: 200px;
+	height: 200px;
+  opacity: 0.9;
+	-webkit-transform:rotateY(120deg) translateZ(500px);
+}
+.fourthStep .maxbox li:nth-child(4){
+  width: 200px;
+	height: 200px;
+  opacity: 0.9;
+	-webkit-transform:rotateY(180deg) translateZ(500px);
+}
+.fourthStep .maxbox li:nth-child(5){
+  width: 200px;
+	height: 200px;
+  opacity: 0.9;
+	-webkit-transform:rotateY(240deg) translateZ(500px);
+}
+.fourthStep .maxbox li:nth-child(6){
+  width: 200px;
+	height: 200px;
+  opacity: 0.9;
+	-webkit-transform:rotateY(300deg) translateZ(500px);
+}
+/* 第五步，内盒子扩展，玫瑰花向上运动 */
+.fifthStep .minbox{
+	width: 200px;
+	height: 200px;
+	left: -30px;
+	top: -30px;
+  -webkit-transform:rotateX(-13deg);
+	-webkit-animation:annularMove 15s linear infinite;
+}
+.fifthStep .maxbox{
+  -webkit-transform:rotateX(-13deg);
+	-webkit-animation:annularMove 15s linear infinite;
+}
+.fifthStep .minbox li:nth-child(1){
+  width: 200px;
+	height: 200px;
+  -webkit-transform:rotateY(30deg) translateZ(500px);
+}
+.fifthStep .minbox li:nth-child(2){
+	width: 200px;
+  height: 200px;
+  background: url(../img/small_annular.png);
+  background-repeat: no-repeat;
+	background-size: contain;
+  -webkit-transform:rotateY(90deg) translateZ(500px);
+}
+.fifthStep .minbox li:nth-child(3){
+	width: 200px;
+	height: 200px;
+  -webkit-transform:rotateY(150deg) translateZ(500px);
+}
+.fifthStep .minbox li:nth-child(4){
+	width: 200px;
+	height: 200px;
+  -webkit-transform:rotateY(210deg) translateZ(500px);
+}
+.fifthStep .minbox li:nth-child(5){
+	width: 200px;
+	height: 200px;
+  -webkit-transform:rotateY(270deg) translateZ(500px);
+}
+.fifthStep .minbox li:nth-child(6){
+	width: 200px;
+	height: 200px;
+  -webkit-transform:rotateY(330deg) translateZ(500px);
+}
+.fifthStep .maxbox li:nth-child(1){
+  width: 200px;
+	height: 200px;
+  opacity: 0.9;
+	-webkit-transform:rotateY(0deg) translateZ(500px);
+}
+.fifthStep .maxbox li:nth-child(2){
+  width: 200px;
+	height: 200px;
+  opacity: 0.9;
+  background: url(../img/large_annular.png);
+  background-repeat: no-repeat;
+	background-size: contain;
+	-webkit-transform:rotateY(60deg) translateZ(500px);
+}
+.fifthStep .maxbox li:nth-child(3){
+  width: 200px;
+	height: 200px;
+  opacity: 0.9;
+	-webkit-transform:rotateY(120deg) translateZ(500px);
+}
+.fifthStep .maxbox li:nth-child(4){
+  width: 200px;
+	height: 200px;
+  opacity: 0.9;
+	-webkit-transform:rotateY(180deg) translateZ(500px);
+}
+.fifthStep .maxbox li:nth-child(5){
+  width: 200px;
+	height: 200px;
+  opacity: 0.9;
+	-webkit-transform:rotateY(240deg) translateZ(500px);
+}
+.fifthStep .maxbox li:nth-child(6){
+  width: 200px;
+	height: 200px;
+  opacity: 0.9;
+	-webkit-transform:rotateY(300deg) translateZ(500px);
+}
+.fifthStep .rose{
+	-webkit-animation:upMove 10s linear infinite;
+}
+@keyframes upMove {
+	0%{
+			transform: translateY(0);
+	}
+	50%{
+		transform: translateY(-145PX);
+	}
+	100%{
+			transform: translateY(-145px);
+	}
+}
+/* 第六步，外盒子变内，内盒子变外，并组成太阳仪 */
+.sixthStep .minbox{
+	width: 200px;
+	height: 200px;
+	left: -30px;
+	top: -30px;
+	-webkit-transform:rotateZ(-35deg);
+	-webkit-animation:verticalAntiAnnularMove 10s linear infinite;
+}
+.sixthStep .maxbox{
+	width: 140px;
+	height: 140px;
+	left: 0px;
+	top: 0px;
+	-webkit-transform:rotateZ(35deg);
+	-webkit-animation:verticalAnnularMove 5s linear infinite;
+}
+.sixthStep .minbox li:nth-child(1){
+  width: 200px;
+	height: 200px;
+  -webkit-transform:rotateY(30deg) translateZ(450px);
+}
+.sixthStep .minbox li:nth-child(2){
+	width: 200px;
+	height: 200px;
+  background: url(../img/small_annular.png);
+  background-repeat: no-repeat;
+	background-size: contain;
+  -webkit-transform:rotateY(90deg) translateZ(450px);
+}
+.sixthStep .minbox li:nth-child(3){
+	width: 200px;
+	height: 200px;
+  -webkit-transform:rotateY(150deg) translateZ(450px);
+}
+.sixthStep .minbox li:nth-child(4){
+	width: 200px;
+	height: 200px;
+  -webkit-transform:rotateY(210deg) translateZ(450px);
+}
+.sixthStep .minbox li:nth-child(5){
+	width: 200px;
+	height: 200px;
+  -webkit-transform:rotateY(270deg) translateZ(450px);
+}
+.sixthStep .minbox li:nth-child(6){
+	width: 200px;
+	height: 200px;
+  -webkit-transform:rotateY(330deg) translateZ(450px);
+}
+.sixthStep .maxbox li:nth-child(1){
+  width: 140px;
+	height: 140px;
+	opacity: 0.9;
+	-webkit-transform:rotateY(0deg) translateZ(140px);
+}
+.sixthStep .maxbox li:nth-child(2){
+  width: 140px;
+	height: 140px;
+	opacity: 0.9;
+  background: url(../img/large_annular.png);
+  background-repeat: no-repeat;
+	background-size: contain;
+	-webkit-transform:rotateY(60deg) translateZ(140px);
+}
+.sixthStep .maxbox li:nth-child(3){
+  width: 140px;
+	height: 140px;
+	opacity: 0.9;
+	-webkit-transform:rotateY(120deg) translateZ(140px);
+}
+.sixthStep .maxbox li:nth-child(4){
+  width: 140px;
+	height: 140px;
+	opacity: 0.9;
+	-webkit-transform:rotateY(180deg) translateZ(140px);
+}
+.sixthStep .maxbox li:nth-child(5){
+  width: 140px;
+	height: 140px;
+	opacity: 0.9;
+	-webkit-transform:rotateY(240deg) translateZ(140px);
+}
+.sixthStep .maxbox li:nth-child(6){
+  width: 140px;
+	height: 140px;
+	opacity: 0.9;
+	-webkit-transform:rotateY(300deg) translateZ(140px);
+}
+@keyframes verticalAntiAnnularMove{
+	0%{
+		-webkit-transform:rotateZ(-35deg) rotateY(0deg);
+	}
+	100%{
+		-webkit-transform:rotateZ(-35deg) rotateY(-360deg);
+	}
+}
+@keyframes verticalAnnularMove{
+	0%{
+		-webkit-transform:rotateZ(35deg) rotateY(0deg);
+	}
+	100%{
+		-webkit-transform:rotateZ(35deg) rotateY(360deg);
+	}
+}
+/* 第七步，整个盒子Z轴旋转 */
+.seventhStep.albumBox{
+	-webkit-animation:albumBoxMove 10s linear infinite;
+}
+.seventhStep .minbox{
+	width: 200px;
+	height: 200px;
+	left: -30px;
+	top: -30px;
+	-webkit-transform:rotateZ(-35deg);
+	-webkit-animation:verticalAntiAnnularMove 10s linear infinite;
+}
+.seventhStep .maxbox{
+	width: 140px;
+	height: 140px;
+	left: 0px;
+	top: 0px;
+	-webkit-transform:rotateZ(35deg);
+	-webkit-animation:verticalAnnularMove 5s linear infinite;
+}
+.seventhStep .minbox li:nth-child(1){
+  width: 220px;
+	height: 220px;
+  -webkit-transform:rotateY(30deg) translateZ(350px);
+}
+.seventhStep .minbox li:nth-child(2){
+	width: 220px;
+	height: 220px;
+  background: url(../img/small_annular.png);
+  background-repeat: no-repeat;
+	background-size: contain;
+  -webkit-transform:rotateY(90deg) translateZ(350px);
+}
+.seventhStep .minbox li:nth-child(3){
+	width: 220px;
+	height: 220px;
+  -webkit-transform:rotateY(150deg) translateZ(350px);
+}
+.seventhStep .minbox li:nth-child(4){
+	width: 220px;
+	height: 220px;
+  -webkit-transform:rotateY(210deg) translateZ(350px);
+}
+.seventhStep .minbox li:nth-child(5){
+	width: 220px;
+	height: 220px;
+  -webkit-transform:rotateY(270deg) translateZ(350px);
+}
+.seventhStep .minbox li:nth-child(6){
+	width: 220px;
+	height: 220px;
+  -webkit-transform:rotateY(330deg) translateZ(350px);
+}
+.seventhStep .maxbox li:nth-child(1){
+  width: 100px;
+	height: 100px;
+	opacity: 0.9;
+	-webkit-transform:rotateY(0deg) translateZ(100px);
+}
+.seventhStep .maxbox li:nth-child(2){
+  width: 100px;
+	height: 100px;
+	opacity: 0.9;
+  background: url(../img/large_annular.png);
+  background-repeat: no-repeat;
+	background-size: contain;
+	-webkit-transform:rotateY(60deg) translateZ(100px);
+}
+.seventhStep .maxbox li:nth-child(3){
+  width: 100px;
+	height: 100px;
+	opacity: 0.9;
+	-webkit-transform:rotateY(120deg) translateZ(100px);
+}
+.seventhStep .maxbox li:nth-child(4){
+  width: 100px;
+	height: 100px;
+	opacity: 0.9;
+	-webkit-transform:rotateY(180deg) translateZ(100px);
+}
+.seventhStep .maxbox li:nth-child(5){
+  width: 100px;
+	height: 100px;
+	opacity: 0.9;
+	-webkit-transform:rotateY(240deg) translateZ(100px);
+}
+.seventhStep .maxbox li:nth-child(6){
+  width: 100px;
+	height: 100px;
+	opacity: 0.9;
+	-webkit-transform:rotateY(300deg) translateZ(100px);
+}
+@keyframes albumBoxMove{
+	0%{
+		-webkit-transform:rotateY(0deg);
+	}
+	100%{
+		-webkit-transform:rotateY(360deg);
+	}
+}
+/* 第八步，内外盒子环形运动，内盒子逆时针转动 */
+.eighthStep .minbox{
+	width: 200px;
+	height: 200px;
+	left: -30px;
+	top: -30px;
+  -webkit-transform:rotateX(-13deg);
+	-webkit-animation:annularMove 10s linear infinite;
+}
+.eighthStep .maxbox{
+	width: 140px;
+	height: 140px;
+	left: 0px;
+	top: 0px;
+  -webkit-transform:rotateX(13deg);
+	-webkit-animation:anitAnnularMove 5s linear infinite;
+}
+.eighthStep .maxbox li:nth-child(1){
+	width: 140px;
+	height: 140px;
+	opacity: 0.8;
+	-webkit-transform:translateZ(70px);
+}
+.eighthStep .maxbox li:nth-child(2){
+	width: 140px;
+	height: 140px;
+	opacity: 0.8;
+	-webkit-transform:rotateX(180deg) translateZ(70px);
+}
+.eighthStep .maxbox li:nth-child(3){
+	width: 140px;
+	height: 140px;
+	opacity: 0.8;
+	-webkit-transform:rotateX(-90deg) translateZ(70px);
+}
+.eighthStep .maxbox li:nth-child(4){
+	width: 140px;
+	height: 140px;
+	opacity: 0.8;
+	-webkit-transform:rotateX(90deg) translateZ(70px);
+}
+.eighthStep .maxbox li:nth-child(5){
+	width: 140px;
+	height: 140px;
+	opacity: 0.8;
+	-webkit-transform:rotateY(-90deg) translateZ(70px);
+}
+.eighthStep .maxbox li:nth-child(6){
+	width: 140px;
+	height: 140px;
+	opacity: 0.8;
+	-webkit-transform:rotateY(90deg) translateZ(70px);
+}
+.eighthStep .minbox li:nth-child(1){
+  width: 200px;
+	height: 200px;
+  opacity: 0.8;
+	-webkit-transform:rotateY(0deg) translateZ(300px);
+}
+.eighthStep .minbox li:nth-child(2){
+  width: 200px;
+	height: 200px;
+  opacity: 0.8;
+  background: url(../img/small_annular.png);
+  background-repeat: no-repeat;
+	background-size: contain;
+	-webkit-transform:rotateY(60deg) translateZ(300px);
+}
+.eighthStep .minbox li:nth-child(3){
+  width: 200px;
+	height: 200px;
+  opacity: 0.8;
+	-webkit-transform:rotateY(120deg) translateZ(300px);
+}
+.eighthStep .minbox li:nth-child(4){
+  width: 200px;
+	height: 200px;
+  opacity: 0.8;
+	-webkit-transform:rotateY(180deg) translateZ(300px);
+}
+.eighthStep .minbox li:nth-child(5){
+  width: 200px;
+	height: 200px;
+  opacity: 0.8;
+	-webkit-transform:rotateY(240deg) translateZ(300px);
+}
+.eighthStep .minbox li:nth-child(6){
+  width: 200px;
+	height: 200px;
+  opacity: 0.8;
+	-webkit-transform:rotateY(300deg) translateZ(300px);
+}
+@keyframes anitAnnularMove{
+	0%{
+		-webkit-transform: rotateX(13deg) rotateY(0deg);
+	}
+	100%{
+		-webkit-transform:rotateX(13deg) rotateY(-360deg);
+	}
+}
+/* 第九步，立体内外盒子顺时针转动 */
+.ninthStep .minbox{
+	width: 200px;
+	height: 200px;
+	left: -30px;
+	top: -30px;
+  -webkit-transform:rotateX(13deg);
+	-webkit-animation:moveClockwise 5s linear infinite;
+}
+.ninthStep .maxbox{
+	width: 140px;
+	height: 140px;
+	left: 0px;
+	top: 0px;
+  -webkit-transform:rotateX(13deg);
+	-webkit-animation:moveClockwise 5s linear infinite;
+}
+.ninthStep .maxbox li:nth-child(1){
+	width: 140px;
+	height: 140px;
+	opacity: 1;
+	-webkit-transform:translateZ(70px);
+}
+.ninthStep .maxbox li:nth-child(2){
+	width: 140px;
+	height: 140px;
+	opacity: 1;
+	-webkit-transform:rotateX(180deg) translateZ(70px);
+}
+.ninthStep .maxbox li:nth-child(3){
+	width: 140px;
+	height: 140px;
+	opacity: 1;
+	-webkit-transform:rotateX(-90deg) translateZ(70px);
+}
+.ninthStep .maxbox li:nth-child(4){
+	width: 140px;
+	height: 140px;
+	opacity: 1;
+	-webkit-transform:rotateX(90deg) translateZ(70px);
+}
+.ninthStep .maxbox li:nth-child(5){
+	width: 140px;
+	height: 140px;
+	opacity: 1;
+	-webkit-transform:rotateY(-90deg) translateZ(70px);
+}
+.ninthStep .maxbox li:nth-child(6){
+	width: 140px;
+	height: 140px;
+	opacity: 1;
+	-webkit-transform:rotateY(90deg) translateZ(70px);
+}
+.ninthStep .minbox li:nth-child(1){
+  width: 200px;
+	height: 200px;
+  opacity: 0.2;
+	-webkit-transform:translateZ(100px);
+}
+.ninthStep .minbox li:nth-child(2){
+  width: 200px;
+	height: 200px;
+  opacity: 0.2;
+	-webkit-transform:rotateX(180deg) translateZ(100px);
+}
+.ninthStep .minbox li:nth-child(3){
+  width: 200px;
+	height: 200px;
+  opacity: 0.2;
+	-webkit-transform:rotateX(-90deg) translateZ(100px);
+}
+.ninthStep .minbox li:nth-child(4){
+  width: 200px;
+	height: 200px;
+  opacity: 0.2;
+	-webkit-transform:rotateX(90deg) translateZ(100px);
+}
+.ninthStep .minbox li:nth-child(5){
+  width: 200px;
+	height: 200px;
+  opacity: 0.2;
+	-webkit-transform:rotateY(-90deg) translateZ(100px);
+}
+.ninthStep .minbox li:nth-child(6){
+  width: 200px;
+	height: 200px;
+  opacity: 0.2;
+	-webkit-transform:rotateY(90deg) translateZ(100px);
+}
+/* 第十步，外盒子扩大 */
+.tenthStep .minbox{
+	width: 200px;
+	height: 200px;
+	left: -30px;
+	top: -30px;
+  -webkit-transform:rotateX(13deg);
+	-webkit-animation:moveClockwise 5s linear infinite;
+}
+.tenthStep .maxbox{
+	width: 140px;
+	height: 140px;
+	left: 0px;
+	top: 0px;
+  -webkit-transform:rotateX(13deg);
+	-webkit-animation:moveClockwise 5s linear infinite;
+}
+.tenthStep .maxbox li:nth-child(1){
+	width: 140px;
+	height: 140px;
+	opacity: 1;
+	-webkit-transform:translateZ(70px);
+}
+.tenthStep .maxbox li:nth-child(2){
+	width: 140px;
+	height: 140px;
+	opacity: 1;
+	-webkit-transform:rotateX(180deg) translateZ(70px);
+}
+.tenthStep .maxbox li:nth-child(3){
+	width: 140px;
+	height: 140px;
+	opacity: 1;
+	-webkit-transform:rotateX(-90deg) translateZ(70px);
+}
+.tenthStep .maxbox li:nth-child(4){
+	width: 140px;
+	height: 140px;
+	opacity: 1;
+	-webkit-transform:rotateX(90deg) translateZ(70px);
+}
+.tenthStep .maxbox li:nth-child(5){
+	width: 140px;
+	height: 140px;
+	opacity: 1;
+	-webkit-transform:rotateY(-90deg) translateZ(70px);
+}
+.tenthStep .maxbox li:nth-child(6){
+	width: 140px;
+	height: 140px;
+	opacity: 1;
+	-webkit-transform:rotateY(90deg) translateZ(70px);
+}
+.tenthStep .minbox li:nth-child(1){
+  width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+	-webkit-transform:translateZ(300px);
+}
+.tenthStep .minbox li:nth-child(2){
+  width: 400px;
+	height: 400px;
+	left: -100px;
+	top: -100px;
+  opacity: 0.8;
+	-webkit-transform:rotateX(180deg) translateZ(300px);
+}
+.tenthStep .minbox li:nth-child(3){
+  width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+	-webkit-transform:rotateX(-90deg) translateZ(300px);
+}
+.tenthStep .minbox li:nth-child(4){
+  width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+	-webkit-transform:rotateX(90deg) translateZ(300px);
+}
+.tenthStep .minbox li:nth-child(5){
+  width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+	-webkit-transform:rotateY(-90deg) translateZ(300px);
+}
+.tenthStep .minbox li:nth-child(6){
+  width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+	-webkit-transform:rotateY(90deg) translateZ(300px);
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>立体相册动画</title>
+		<link type="text/css" href="css/album.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<div class="container">
+			<audio src="audio/buyaowangjiwoaini.flac" autoplay loop></audio>
+			<a href="javascript:;" class="musicLogo"></a>
+			<!-- 左上角跳动的心 -->
+			<div class="small_chest">
+				<div class="small_chest_left"></div>
+				<div class="small_chest_center"></div>
+				<div class="small_chest_right"></div>
+			</div>
+			<!-- 心型照片墙 -->
+			<div class="chest">
+				<div class="heart_left">
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="heart_center">
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="heart_right">
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 动画立体相册 -->
+			<div class="albumBox">
+				<div class="rose">
+					<div class="text">松 LOVE 雪</div>
+					<canvas id="c"></canvas>
+				</div>
+				<ul class="minbox">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<ul class="maxbox">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+		<script src="js/album.js" type="text/javascript"></script>
+	</body>
+</html>
